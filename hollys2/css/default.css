@@ -1,0 +1,70 @@
+@charset 'utf-8';
+
+
+
+       /* 외부폰트여서 임포트방식으로 가져온거  */
+       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        html,body{font-family:'Roboto','Noto Sans KR',sans-serif;font-size:14px;}
+        /* 컨테이너스타일 그리드 시스템으로 사용하는친구임 */
+        .container{width:960px;margin:0 auto;padding:24px 0;}
+
+        /* skip style */
+        .skip-menu a{padding:10px 12px;background-color:#000;font-weight:700;font-size:32px;color:#fff;position:fixed;left:1em;top:-100px;z-index:99999;}
+        .skip-menu a:focus{top:0;}
+        
+        /* HEADER Style */
+        /* float은 가운데 보내기 기능이 없음 */
+        /* logo는 블록요소라서 너비를 지정해주어야함 */
+        /* position은 마진으로 줘서 간격주는게 좋음 */
+        .header{border-bottom:2px solid #b5121b;position:relative;}
+        .header>.container{padding-bottom:0;}
+        .header .row:first-child{position:relative;margin-bottom:1em;}
+        .quick-nav01{float:left;}
+        .quick-nav01 li{float:left;margin-right:2em;font-weight:700;}
+        .quick-nav01 li a{color:#333;}
+        .quick-nav01 li:first-child a{color:#b5121b;}
+        .quick-nav01 li:hover a{color:#b5121b;}
+        .logo{width:66px;margin:0 auto;}
+        .quick-nav02{position:absolute;top:0;right:0;}
+        .quick-nav02 li{float:left;margin-right:1.5em;font-weight:700;font-size:0.8em;}
+        .quick-nav02 li a{color:#666;}
+        .main-nav li{float:left;padding:12px 28px 6px;font-weight: 900;font-size:1.6em;text-align: center;line-height: 1em;transition:0.2s;}
+        .main-nav li a{color:#333;transition:0.2s;}
+        .main-nav li a .ko{font-weight:400;font-size:0.5em;color:rgba(255,255,255,0);transition:0.6s;}
+        .main-nav li:hover{background-color:#b5121b;}
+        .main-nav li:hover a{color:#fff;}
+        .main-nav li:hover a .ko{color:rgba(255,255,255,1);}
+        .nav .sub-nav{height:0;background-color: #999;overflow:hidden;position:absolute;left:0;right:0;top:100%;z-index:99990;transition:0.5s;}
+        .nav:hover .sub-nav{height:220px;}
+        .sub-nav>ul>li{float:left;text-align: center;}
+        .sub-nav>ul>li:nth-child(1){padding:0 14px;}
+        .sub-nav>ul>li:nth-child(2){padding:0 60px;}
+        .sub-nav>ul>li:nth-child(3){padding:0 60px;}
+        .sub-nav>ul>li:nth-child(4){padding:0 74px;}
+        .sub-nav>ul>li:nth-child(5){padding:0 38px;}
+        .sub-nav>ul>li:nth-child(6){padding:0 8px;}
+        .sub-nav li li{margin:4px 0;}
+        .sub-nav li li a{color:rgb(255,255,255,0.6);}
+        .sub-nav li li a:hover{color:rgb(255,255,255,1);}
+        .header .row:last-child{
+            position:fixed;
+            /* 누구에게나 종속된게 아니라 브라우저에 종속될것이기때문에 픽스트 */
+            left:86%;
+            top:36px;
+            /* 스킵메뉴가9999이기때문에 */
+            z-index:99998;
+        }
+        /* 블록안에서 배치되어야할 요소들이 있다는 row */
+        /* 레퍼는 전체, 헤더안에 들어가는 컨텐츠들을 그룹영역별로 베치해야하기때문에 container라고 이름을 붙인다. 다른 영역들도 container로 */
+        /* row로 영역을 잡은이유는 컨테이너로 배치하기 어렵기 때문에 그룹안에서 로우로 이름을 붙여줌. */
+         
+        /* FOOTER STYLE */
+          .footer{background-color: #b5121b;color:#fff;}
+          .footer .row:first-child{margin-bottom:1em;}
+          .footer a{color:#fff;}
+          .footer li{float:left;padding:0 1em;position:relative;}
+          .footer li:first-child{padding-left:0;}
+          .footer li::after{content:'';display:block;width:1px;height:10px;background-color: #fff;position:absolute;right:0;top:6px;}
+          .footer li:last-child::after{display:none;}
+          address{font-style:normal;}
+          address p{font-weight:300;font-size:12px;margin-bottom:3px;}
